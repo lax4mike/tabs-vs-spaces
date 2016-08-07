@@ -1,0 +1,20 @@
+button {
+    margin: 0 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #eee;
+    }
+
+    &:active {
+        transform: translateY(1px);
+    }
+
+    &:focus {
+        outline: none;
+        border: 1px solid #008cff;
+    }
+}

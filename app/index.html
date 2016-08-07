@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tabs vs. Spaces</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="build/css/index-generated.css">
+
+</head>
+<body>
+
+<script id="tab-example-1" type="text/html">
+import React			from "react";
+import ReactDom			from "react-dom";
+import classNames 		from "classnames";
+
+function foo() {
+	var someVar = 1,							// Some var
+		anotherVariable = 2,					// Another var
+		isThing = someVar === anotherVariable;	// Is thing?
+	if (someVar === otherVar)	bar();		// If we're otherVar
+	else if (isThing)			otherFn();	// Do awesome stuff
+	else						quux();		// Do bad stuff!!
+	function bar() {
+		if (anotherVariable === 42) {		// If it's the answer
+			anotherFunction();
+		}
+	}
+}
+</script>
+
+    <div class="js-mount"></div>
+
+    <script type="text/javascript" src="build/js/polyfill-generated.js"></script>
+    <script type="text/javascript" src="build/js/third-party-generated.js"></script>
+    <script type="text/javascript" src="build/js/index-generated.js"></script>
+
+</body>
+</html>

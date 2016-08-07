@@ -1,0 +1,22 @@
+.code-viewer {
+
+}
+
+.code-viewer__space {
+    background-color: #eee;
+}
+
+.code-viewer__tab {
+    position: relative;
+
+    // using this instead of a border on __tab because the border
+    // messes with the width (even with box-sizing: border-box...)
+    &::before {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 1px;
+        background-color: #ddd;
+        content: "";
+    }
+}
