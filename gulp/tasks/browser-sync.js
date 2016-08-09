@@ -15,7 +15,7 @@ module.exports = function(config, env){
 
     // browserSync settings
     var settings = {
-        port: config.local.browserSyncPort || 3000,
+        port: config.local.browserSyncPort || 8080,
         open: false, // or  "external"
         notify: false,
         ghostMode: false,

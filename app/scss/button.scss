@@ -1,5 +1,8 @@
 button {
     margin: 0 0.5em;
+
+    font-size: 16px;
+
     border: 1px solid #ddd;
     border-radius: 3px;
     background: white;
@@ -15,6 +18,22 @@ button {
 
     &:focus {
         outline: none;
+        background-color: #eef;
+    }
+
+    &.button--two {
+        width: 2em;
+    }
+
+    &.button--four {
+        width: 4em;
+    }
+
+    &.button--eight {
+        width: 8em;
+    }
+
+    &.is-selected {
         border: 1px solid #008cff;
     }
 }

@@ -1,17 +1,36 @@
 import React, { PropTypes } from "react";
+import classNames from "classnames";
 import TabFormatter from "../../utils/tab-formatter.js";
+import hljs from "highlight.js";
+import hljsJavascipt from "highlight.js/lib/languages/javascript.js";
+
+// i'm not sure if this does anything...
+hljsJavascipt(hljs);
 
 
 export default React.createClass({
 
     propTypes: {
-        code: PropTypes.string.isRequired
+        code: PropTypes.string.isRequired,
+        initialTabSize: PropTypes.number
     },
 
     getInitialState() {
         return {
-            tabSize: 2
+            tabSize: this.props.initialTabSize || 2
         };
+    },
+
+    componentDidMount() {
+        this.highlightCode();
+    },
+
+    componentDidUpdate(){
+         this.highlightCode();
+    },
+
+    highlightCode() {
+        hljs.highlightBlock(this.refs.code);
     },
 
     toSpaces(n) {
@@ -24,10 +43,12 @@ export default React.createClass({
         return `<span class='code-viewer__tab'>${spaces.join("")}</span>`;
     },
 
-    handleButtonClick(n) {
+    handleButtonClick(n, e) {
         this.setState({
             tabSize: n
         });
+
+        e.target.blur();
     },
 
     render() {
@@ -45,18 +66,38 @@ export default React.createClass({
             suffix: "</span>"
         });
 
-        const buttons = [2, 4, 8];
+        const buttons = [
+            { name: "two", number: 2},
+            { name: "four", number: 4},
+            { name: "eight", number: 8}
+        ];
 
         return (
             <div className="code-viewer">
-                <pre dangerouslySetInnerHTML={{__html: code}} />
-                <div className="code-viewer__buttons">
-                    {buttons.map(b => (
-                        <button type="button" onClick={this.handleButtonClick.bind(this, b)}>
-                            {b}
-                        </button>
-                    ))}
 
+                <div className="code-viewer__buttons">
+                    {buttons.map(b => {
+                        const buttonClasses = classNames(`button--${b.name}`, {
+                            "is-selected": b.number === this.state.tabSize
+                        });
+
+                        return (
+                            <button type="button"
+                              key={b.number}
+                              className={buttonClasses}
+                              onClick={this.handleButtonClick.bind(this, b.number)}>
+                                {b.number}
+                            </button>
+                        );
+                    })}
+                </div>
+
+                <div className="code-viewer__code">
+                    <pre>
+                        <code ref="code"
+                            className="javascript"
+                            dangerouslySetInnerHTML={{__html: code}} />
+                    </pre>
                 </div>
             </div>
         );

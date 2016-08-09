@@ -1,9 +1,33 @@
-@import 'https://fonts.googleapis.com/css?family=Source+Code+Pro';
+@import "https://fonts.googleapis.com/css?family=Source+Code+Pro";
+@import "https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic";
 
 body {
+    font-family: "Open Sans", Helvetica, Arial, san-serif;
     background-color: #fff;
+    font-size: 18px;
+    line-height: 1.5em;
 }
 
-pre {
+.app {
+    max-width: 800px;
+    margin: auto;
+}
+
+h2 {
+    margin: 64px 0 24px;
+}
+
+p {
+
+}
+
+pre,
+code {
     font-family: "Source Code Pro", monospace;
+}
+
+ol {
+    li {
+        margin: 16px 0;
+    }
 }

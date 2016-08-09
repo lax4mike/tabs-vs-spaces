@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Tabs vs. Spaces</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
 
     <link rel="stylesheet" href="build/css/index-generated.css">
 
@@ -11,24 +12,48 @@
 <body>
 
 <script id="tab-example-1" type="text/html">
-import React			from "react";
-import ReactDom			from "react-dom";
-import classNames 		from "classnames";
+import $ 					<span class="code-viewer__highlight">f</span>rom "jquery";
+import React, { PropTypes } <span class="code-viewer__highlight">f</span>rom "react";
+import classNames 			<span class="code-viewer__highlight">f</span>rom "classnames";
 
-function foo() {
-	var someVar = 1,							// Some var
-		anotherVariable = 2,					// Another var
-		isThing = someVar === anotherVariable;	// Is thing?
-	if (someVar === otherVar)	bar();		// If we're otherVar
-	else if (isThing)			otherFn();	// Do awesome stuff
-	else						quux();		// Do bad stuff!!
-	function bar() {
-		if (anotherVariable === 42) {		// If it's the answer
-			anotherFunction();
-		}
+React.creatClass({
+	propTypes: {
+		id 		<span class="code-viewer__highlight">:</span> PropTypes.string.isRequired,
+		title 	<span class="code-viewer__highlight">:</span> PropTypes.string.isRequired,
+		...
+	},
+	...
+});
+</script>
+
+<script id="tab-example-2" type="text/html">
+import $ 										<span class="code-viewer__highlight">f</span>rom "jquery";
+import React, { PropTypes } <span class="code-viewer__highlight">f</span>rom "react";
+import classNames 					<span class="code-viewer__highlight">f</span>rom "classnames";
+
+React.creatClass({
+	propTypes: {
+		id 		<span class="code-viewer__highlight">:</span> PropTypes.string.isRequired,
+		title <span class="code-viewer__highlight">:</span> PropTypes.string.isRequired,
+		...
+	},
+	...
+});
+</script>
+
+<script id="tab-example-3" type="text/html">
+import $                    <span class="code-viewer__highlight">f</span>rom "jquery";
+import React, { PropTypes } <span class="code-viewer__highlight">f</span>rom "react";
+import shallowCompare       <span class="code-viewer__highlight">f</span>rom "react-addons-shallow-compare";
+
+function isAnswer(number) {
+	if (number === 42) {  <span class="code-viewer__highlight">//</span> Across block levels
+		return true;      <span class="code-viewer__highlight">//</span> it still breaks
 	}
+	return false;
 }
 </script>
+
 
     <div class="js-mount"></div>
 

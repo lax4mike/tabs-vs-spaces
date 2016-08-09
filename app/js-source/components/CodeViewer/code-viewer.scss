@@ -1,9 +1,24 @@
 .code-viewer {
+    border-left: 2px solid #ddd;
+    margin: 0 36px 36px;
+    padding: 16px;
+}
+.code-viewer__code {
+    max-width: 100%;
+    overflow-x: auto;
 
+    pre,
+    code {
+        margin: 0;
+    }
+}
+
+.code-viewer__buttons {
+    padding: 0 0 12px 0;
 }
 
 .code-viewer__space {
-    background-color: #eee;
+    background-color: #f9f9f9;
 }
 
 .code-viewer__tab {
@@ -16,7 +31,11 @@
         right: 0;
         height: 100%;
         width: 1px;
-        background-color: #ddd;
+        background-color: #ccc;
         content: "";
     }
+}
+
+.code-viewer__highlight {
+    background-color: #ffa;
 }

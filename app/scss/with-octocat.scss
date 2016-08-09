@@ -1,0 +1,17 @@
+.with-octocat {
+    display: flex;
+    align-items: center;
+
+    img {
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: 24px;
+    }
+
+    p {
+        flex-basis: auto;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+}
