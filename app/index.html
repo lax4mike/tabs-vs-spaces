@@ -16,7 +16,7 @@ import $ 					<span class="code-viewer__highlight">f</span>rom "jquery";
 import React, { PropTypes } <span class="code-viewer__highlight">f</span>rom "react";
 import classNames 			<span class="code-viewer__highlight">f</span>rom "classnames";
 
-React.creatClass({
+React.createClass({
 	propTypes: {
 		id 		<span class="code-viewer__highlight">:</span> PropTypes.string.isRequired,
 		title 	<span class="code-viewer__highlight">:</span> PropTypes.string.isRequired,
@@ -31,7 +31,7 @@ import $ 										<span class="code-viewer__highlight">f</span>rom "jquery";
 import React, { PropTypes } <span class="code-viewer__highlight">f</span>rom "react";
 import classNames 					<span class="code-viewer__highlight">f</span>rom "classnames";
 
-React.creatClass({
+React.createClass({
 	propTypes: {
 		id 		<span class="code-viewer__highlight">:</span> PropTypes.string.isRequired,
 		title <span class="code-viewer__highlight">:</span> PropTypes.string.isRequired,
@@ -47,8 +47,12 @@ import React, { PropTypes } <span class="code-viewer__highlight">f</span>rom "re
 import shallowCompare       <span class="code-viewer__highlight">f</span>rom "react-addons-shallow-compare";
 
 function isAnswer(number) {
-	if (number === 42) {  <span class="code-viewer__highlight">//</span> Across block levels
-		return true;      <span class="code-viewer__highlight">//</span> it still breaks
+	const theNumber      <span class="code-viewer__highlight">=</span> 42,
+	      anotherNumber  <span class="code-viewer__highlight">=</span> 43,
+		  whoops         <span class="code-viewer__highlight">=</span> "a tab snuck in there...";
+
+	if (number === theNumber) {  <span class="code-viewer__highlight">//</span> Across block levels
+		return true;             <span class="code-viewer__highlight">//</span> it still breaks
 	}
 	return false;
 }

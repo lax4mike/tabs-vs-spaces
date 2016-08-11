@@ -20,18 +20,18 @@ export default React.createClass({
                 <h1>Tabs vs. Spaces</h1>
 
                 <p>
-                    The strongest argument for using <strong>tabs</strong> to indent code is that <em>Tabs allow developers with different preferences in indentation size to change how the code looks without changing the code</em>.  In reality, <strong>tabs</strong> just make things worse and lead to code that is hard to read and inconsistent.
+                    The strongest argument for using <strong>tabs</strong> to indent code is that <em>tabs allow developers to specify indentation size to suit their preference</em>.  In reality, using <strong>tabs</strong> can not deliver this benefit consistently and it leads to code that is misaligned and hard to read.
                 </p>
 
                 <p>
-                    I will demostrate these inconsistentcies in the example below.  The tabs are colored grey.  Choose the tab width by selecting the buttons.
+                    I will demonstrate these inconsistencies in the examples below.
                 </p>
 
 
                 <h2>Tabs with 4 character widths</h2>
 
                 <p>
-                    This example shows some real code that was written with the editor set up for a 4-width tab.  Try changing the tab width with the buttons, paying attention to the alignment of the yellow characters.
+                    This example shows some code that was written with the editor set up for a 4 character width tab.  Try changing the tab width with the buttons, paying attention to the alignment of the yellow characters.
                 </p>
 
                 <CodeViewer
@@ -51,15 +51,15 @@ export default React.createClass({
                 />
 
 
-                <h2>Code through a web browser</h2>
+                <h2>Viewing code through a web browser</h2>
 
                 <div className="with-octocat">
 
                     <img src="img/octocat.png" alt="github octocat" />
 
-                    <p>As demonstrated in those two examples, this is very problematic if you view this code with the tabs set to something other than what it was authored in.
+                    <p>As demonstrated in these examples, it is very problematic if you view this code with the tabs set to something other than what it was authored in.
                     <br/><br/>
-                    Considering that most people auther with 2 or 4 width tabs, this is especially a problem when viewing code on <a href="https://github.com">github</a> and other online repositories, which uses 8-width tabs by default (try 8-width above, it's the worst).
+                    Considering that most people author with 2 or 4 width tabs, this is especially a problem when viewing code on <a href="https://github.com">github</a> and other online repositories, which uses <strong>8</strong> width tabs. (try 8 width tabs above, it's the worst!).
                     </p>
                 </div>
 
@@ -67,10 +67,15 @@ export default React.createClass({
                 <h2>Potential solution: Tabs for block indent only</h2>
 
                 <p>
-                    Some people say that the solution to this problem is to use tabs for <em>block level indentions</em> only, and use <strong>spaces</strong> for inline alignments.  This has some issues:
+                    Some people say that the solution to this problem is to use <strong>tabs</strong> for <em>block level indention's</em> and use <strong>spaces</strong> for <em>inline alignments</em>.  This has it's own set of problems:
                 </p>
                     <ol>
-                        <li>This requires that all developers always follow this convension.  Inevitably and unknowingly, someone will use their tab key for inline alignments, which bring us back to the previous two examples.</li>
+                        <li>There is now a mix of <strong>tabs</strong> and <strong>spaces</strong>.  If they are invisible, it makes it hard to manage which is where and makes this convention very <strong>brittle</strong>.  Some editors can show invisibles, but this is visual <strong>clutter</strong>. </li>
+
+                        <li>This requires that all developers always follow and are aware this convention.  Inevitably and unknowingly, someone will use their tab key for inline alignments (up to 20 spaces in this example for the jquery line), which brings us back to the original problems.</li>
+
+                        <li><img src="img/both.png" alt=""/></li>
+
                         <li>It doesn't even work for all situations, see the example below:</li>
                     </ol>
 
@@ -85,7 +90,8 @@ export default React.createClass({
 
 
                 <footer>
-                    {/* <sub>Insprired from <a href="http://jarrodoverson.com/blog/spaces-vs-tabs/">http://jarrodoverson.com/blog/spaces-vs-tabs/</a>.  I rewrote this because the javascript is broken after the wordpress migration.</sub> */}
+                        <sub>
+                        Inspired by <a href="http://jarrodoverson.com/blog/spaces-vs-tabs/">http://jarrodoverson.com/blog/spaces-vs-tabs/</a>.</sub>
                 </footer>
             </div>
         );

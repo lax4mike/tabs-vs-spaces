@@ -27,7 +27,21 @@ code {
 }
 
 ol {
+
+    margin-bottom: 32px;
+
+    @media (max-width: 400px){
+        padding-left: 25px;
+    }
+
     li {
-        margin: 16px 0;
+        margin: 24px 0;
+    }
+
+    img {
+        max-width: 100%;
+        vertical-align: text-top;
+        padding: 8px;
+        box-sizing: border-box;
     }
 }

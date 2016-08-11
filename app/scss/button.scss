@@ -5,7 +5,7 @@ button {
 
     border: 1px solid #ddd;
     border-radius: 3px;
-    background: white;
+    background-color: white;
     cursor: pointer;
 
     &:hover {
@@ -35,5 +35,9 @@ button {
 
     &.is-selected {
         border: 1px solid #008cff;
+        background-color: white;
+        cursor: default;
+
+        pointer-events: none;
     }
 }

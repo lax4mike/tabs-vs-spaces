@@ -75,7 +75,10 @@ export default React.createClass({
         return (
             <div className="code-viewer">
 
-                <div className="code-viewer__buttons">
+                <div className="code-viewer__controls">
+                    <label>Tab width: </label>
+
+                    <div className="code-viewer__buttons">
                     {buttons.map(b => {
                         const buttonClasses = classNames(`button--${b.name}`, {
                             "is-selected": b.number === this.state.tabSize
@@ -90,6 +93,7 @@ export default React.createClass({
                             </button>
                         );
                     })}
+                    </div>
                 </div>
 
                 <div className="code-viewer__code">
